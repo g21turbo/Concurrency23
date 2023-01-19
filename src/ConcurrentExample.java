@@ -26,9 +26,21 @@ public class ConcurrentExample {
             }
         };
 
+        Runnable task3 = () -> {
+            for (int i = 0; i < 10; i++) {
+                System.out.println("Task 3: " + i);
+                try {
+                    Thread.sleep(100); // Sleep for 100 milliseconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
         // Create two threads, one for each task
         // and start them to run concurrently
         new Thread(task1).start();
         new Thread(task2).start();
+        new Thread(task3).start();
     }
 }
