@@ -37,7 +37,7 @@ public class ConcurrentExample {
             }
         };
 
-        // Create two threads, one for each task
+        // Create three threads, one for each task
         // and start them to run concurrently
         new Thread(task1).start();
         new Thread(task2).start();
